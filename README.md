@@ -20,6 +20,7 @@ Create throw away composer projects for Codeception tests.
 
 
 - [Why?](#why)
+- [The Goals, or What This Module Does?](#the-goals-or-what-this-module-does)
 - [Install](#install)
 - [Config](#config)
   - [projectRoot](#projectroot)
@@ -58,16 +59,20 @@ Because it good to test your code in a more realistic environment.
 
 ## The Goals, or What This Module Does?
 
+Create throw away composer projects for Codeception tests.
+
+
+
 Before each test:
 
-  *. Copy composer project files to a temporary directory
-  *. Config local packages paths
-  *. Install package via composer
-  *. Change directory into the temporary directory
+* Copy composer project files to a temporary directory
+* Config local packages paths
+* Install package via composer
+* Change directory into the temporary directory
 
 After each test:
 
-  *. Delete the temporary directory
+* Delete the temporary directory
 
 ## Install
 
@@ -166,7 +171,7 @@ See: [Composer document](https://getcomposer.org/doc/05-repositories.md#path)
 
 Change directory to the temporary project directory
 
-  * @return void
+* @return void
 
 Example:
 ```php
@@ -177,9 +182,9 @@ $I->amInTmpProjectDir();
 
 Run a composer command
 
-  * @param string $command
+*   @param string $command
   * @param bool   $failNonZero Optional. Default: true
-                               Fails If exit code is > 0.
+           Fails If exit code is > 0.
   * @return void
 
 Example:
@@ -188,12 +193,12 @@ $I->runComposerCommand('update --verbose');
 
 // This is equivalent to running `$ composer update --verbose` in the console.
 ```
- 
+
 ### runComposerInstall
 
 Run `composer install` with [`composerInstallFlags`](#composerinstallflags)
 
-  * @return void
+* @return void
 
 Example:
 ```php
@@ -206,7 +211,7 @@ Get the path to the temporary project directory
 
 Note: Return value maybe a symbolic link.
 
-  * @return string
+* @return string
 
 Example:
 ```php
