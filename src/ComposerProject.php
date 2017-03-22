@@ -52,17 +52,17 @@ EOF;
     /**
      * @var Cli
      */
-    private $cli;
+    protected $cli;
 
     /**
      * @var Filesystem
      */
-    private $filesystem;
+    protected $filesystem;
 
     /**
      * @var string
      */
-    private $tmpProjectDir;
+    protected $tmpProjectDir;
 
     /**
      * @param TestInterface $test
@@ -174,8 +174,8 @@ EOF;
     public function _depends(): array
     {
         return [
-            Cli::class        => self::DEPENDENCY_MESSAGE,
-            Filesystem::class => self::DEPENDENCY_MESSAGE,
+            Cli::class        => static::DEPENDENCY_MESSAGE,
+            Filesystem::class => static::DEPENDENCY_MESSAGE,
         ];
     }
 
