@@ -41,23 +41,23 @@ modules:
 --
 EOF;
 
+    /**
+     * @var Cli
+     */
+    protected $cli;
+
     protected $config = [
         'composerInstallFlags' => '--no-interaction --quiet',
         'symlink'              => 'true',
         'repositoryPaths'      => [],
     ];
 
-    protected $requiredFields = ['projectRoot'];
-
-    /**
-     * @var Cli
-     */
-    protected $cli;
-
     /**
      * @var Filesystem
      */
     protected $filesystem;
+
+    protected $requiredFields = ['projectRoot'];
 
     /**
      * @var string
