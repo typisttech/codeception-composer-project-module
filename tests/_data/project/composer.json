@@ -1,0 +1,10 @@
+{
+    "require": {
+        "php": "^7.0",
+        "dummy/dummy": "*"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "who-am-i": "project root"
+    }
+}

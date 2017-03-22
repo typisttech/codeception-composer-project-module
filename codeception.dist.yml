@@ -1,4 +1,4 @@
-namespace: TypistTechCodeceptionComposerProjectModule
+namespace: TypistTech\CodeceptionComposerProjectModule
 actor: Tester
 paths:
     tests: tests
