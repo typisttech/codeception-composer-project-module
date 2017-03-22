@@ -41,28 +41,28 @@ modules:
 --
 EOF;
 
+    /**
+     * @var Cli
+     */
+    protected $cli;
+
     protected $config = [
         'composerInstallFlags' => '--no-interaction --quiet',
         'symlink'              => 'true',
         'repositoryPaths'      => [],
     ];
 
-    protected $requiredFields = ['projectRoot'];
-
-    /**
-     * @var Cli
-     */
-    private $cli;
-
     /**
      * @var Filesystem
      */
-    private $filesystem;
+    protected $filesystem;
+
+    protected $requiredFields = ['projectRoot'];
 
     /**
      * @var string
      */
-    private $tmpProjectDir;
+    protected $tmpProjectDir;
 
     /**
      * @param TestInterface $test
@@ -174,8 +174,8 @@ EOF;
     public function _depends(): array
     {
         return [
-            Cli::class        => self::DEPENDENCY_MESSAGE,
-            Filesystem::class => self::DEPENDENCY_MESSAGE,
+            Cli::class        => static::DEPENDENCY_MESSAGE,
+            Filesystem::class => static::DEPENDENCY_MESSAGE,
         ];
     }
 

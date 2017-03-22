@@ -22,7 +22,21 @@ Create throw away composer projects for Codeception tests.
 - [Why?](#why)
 - [Install](#install)
 - [Config](#config)
+  - [projectRoot](#projectroot)
+  - [composerInstallFlags](#composerinstallflags)
+  - [symlink](#symlink)
+  - [repositoryPaths](#repositorypaths)
+- [API](#api)
+  - [amInTmpProjectDir](#amintmpprojectdir)
+  - [runComposerCommand](#runcomposercommand)
+  - [runComposerInstall](#runcomposerinstall)
+  - [getTmpProjectDir()](#gettmpprojectdir)
 - [Frequently Asked Questions](#frequently-asked-questions)
+  - [I want to see what Codeception Composer Project Module have done for me?](#i-want-to-see-what-codeception-composer-project-module-have-done-for-me)
+  - [What to do when `composer install` fail or not install the latest version?](#what-to-do-when-composer-install-fail-or-not-install-the-latest-version)
+  - [What to do when the tests are too slow?](#what-to-do-when-the-tests-are-too-slow)
+  - [Does it works on `codeception/base`?](#does-it-works-on-codeceptionbase)
+  - [Do you have an example project that use this module?](#do-you-have-an-example-project-that-use-this-module)
 - [Support!](#support)
   - [Donate via PayPal *](#donate-via-paypal-)
   - [Why don't you hire me?](#why-dont-you-hire-me)
@@ -40,18 +54,207 @@ Create throw away composer projects for Codeception tests.
 
 ## Why?
 
+Because it good to test your code in a more realistic environment. 
+
+## The Goals, or What This Module Does?
+
+Before each test:
+
+  *. Copy composer project files to a temporary directory
+  *. Config local packages paths
+  *. Install package via composer
+  *. Change directory into the temporary directory
+
+After each test:
+
+  *. Delete the temporary directory
 
 ## Install
 
 Installation should be done via composer, details of how to install composer can be found at [https://getcomposer.org/](https://getcomposer.org/).
 
 ``` bash
-$ composer require typisttech/codeception-composer-project-module
+$ composer require typisttech/codeception-composer-project-module --dev
 ```
 
 ## Config
 
+In your Codeception config file (e.g: `acceptance.suite.yml` or `acceptance.yml`):
+
+*This is the minimal config:*
+
+```yaml
+modules:
+    enabled:
+        - ComposerProject:
+            projectRoot: 'path/to/composer/project'
+            depends:
+                - Cli
+                - Filesystem
+```
+
+*This is the full config:*
+
+```yaml
+modules:
+    enabled:
+        - ComposerProject:
+            projectRoot: 'path/to/composer/project'
+            composerInstallFlags: '--no-interaction --quiet'
+            symlink: 'true'
+            repositoryPaths:
+                - 'tests/_data/dummy'
+                - 'tests/_data/another-dummy'
+            depends:
+                - Cli
+                - Filesystem
+```
+
+### projectRoot
+
+**Required** String
+
+Example: `tests/_data/project`
+
+Path to the composer project directory, relative to the root directory (where `codeception.yml` is located).
+This directory must contain a `composer.json` file.
+
+### composerInstallFlags
+
+*Optional* String
+
+Example: `--no-interaction --verbose --no-ansi`
+
+Default: `--no-interaction --quiet`
+
+Extra flags to pass in during `composer install`.
+
+See: [$ composer help install](https://getcomposer.org/doc/03-cli.md#install)
+
+### symlink
+
+*Optional* Boolean in **single quotes**
+
+Example: `'false'`
+
+Default: `'true'`
+
+Should the local packages be symlink-ed or not.
+
+See: [Composer document](https://getcomposer.org/doc/05-repositories.md#path)
+
+### repositoryPaths
+
+*Optional* Array of strings
+
+Example: 
+```yaml
+- 'tests/_data/dummy'
+- 'tests/_data/another-dummy'
+```
+
+Default: The root directory (where `codeception.yml` is located).
+
+Paths to local packages, relative to the root directory (where `codeception.yml` is located).
+
+See: [Composer document](https://getcomposer.org/doc/05-repositories.md#path)
+
+
+## API
+
+### amInTmpProjectDir
+
+Change directory to the temporary project directory
+
+  * @return void
+
+Example:
+```php
+$I->amInTmpProjectDir();
+```
+
+### runComposerCommand
+
+Run a composer command
+
+  * @param string $command
+  * @param bool   $failNonZero Optional. Default: true
+                               Fails If exit code is > 0.
+  * @return void
+
+Example:
+```php
+$I->runComposerCommand('update --verbose');
+
+// This is equivalent to running `$ composer update --verbose` in the console.
+```
+ 
+### runComposerInstall
+
+Run `composer install` with [`composerInstallFlags`](#composerinstallflags)
+
+  * @return void
+
+Example:
+```php
+$I->runComposerInstall();
+```
+
+### getTmpProjectDir()
+
+Get the path to the temporary project directory
+
+Note: Return value maybe a symbolic link.
+
+  * @return string
+
+Example:
+```php
+$I->getTmpProjectDir();
+
+// To ensure real path:
+$tmpProjectDir = $I->getTmpProjectDir();
+$tmpProjectDir = realpath($tmpProjectDir);
+```
+
 ## Frequently Asked Questions
+
+### I want to see what Codeception Composer Project Module have done for me?
+
+Run the tests with the [`--debug` flag](http://codeception.com/docs/reference/Commands). 
+
+Codeception Composer Project Module will log debug message to the console.
+
+### What to do when `composer install` fail or not install the latest version?
+
+> Your requirements could not be resolved to an installable set of packages.
+
+Make sure you have package [version constraints](https://getcomposer.org/doc/articles/versions.md) and [minimum stability](https://getcomposer.org/doc/articles/versions.md#minimum-stability) set up correctly.
+
+```json
+{
+    "require": {
+        "dummy/dummy": "*"
+    },
+    "minimum-stability": "dev"
+}
+```
+
+### What to do when the tests are too slow?
+
+- Enable [symlink](#symlink)
+- Add `--prefer-dist` to [composerInstallFlags](#composerinstallflags)
+- Add `"prefer-stable": true` to `composer.json`
+
+Note: These methods might not suitable for your use case.
+
+### Does it works on `codeception/base`?
+
+Yes. This module works on both [`codeception/codeception`](https://packagist.org/packages/codeception/codeception) and [`codeception/base`](https://packagist.org/packages/codeception/base)
+
+### Do you have an example project that use this module?
+
+Here you go: [Imposter Plugin](https://github.com/TypistTech/imposter-plugin)
 
 ## Support! 
 
