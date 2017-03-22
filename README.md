@@ -3,7 +3,6 @@
 [![Latest Stable Version](https://poser.pugx.org/typisttech/codeception-composer-project-module/v/stable)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
 [![Total Downloads](https://poser.pugx.org/typisttech/codeception-composer-project-module/downloads)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
 [![Build Status](https://travis-ci.org/TypistTech/codeception-composer-project-module.svg?branch=master)](https://travis-ci.org/TypistTech/codeception-composer-project-module)
-[![codecov](https://codecov.io/gh/TypistTech/codeception-composer-project-module/branch/master/graph/badge.svg)](https://codecov.io/gh/TypistTech/codeception-composer-project-module)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/TypistTech/codeception-composer-project-module/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/TypistTech/codeception-composer-project-module/?branch=master)
 [![PHP Versions Tested](http://php-eye.com/badge/typisttech/codeception-composer-project-module/tested.svg)](https://travis-ci.org/TypistTech/codeception-composer-project-module)
 [![StyleCI](https://styleci.io/repos/85661405/shield?branch=master)](https://styleci.io/repos/85661405)
@@ -84,9 +83,6 @@ Run the tests:
 
 ``` bash
 $ composer test
-
-// Or, run with coverage support
-$ composer test-with-coverage
 ```
 
 We also test all PHP files against [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/).

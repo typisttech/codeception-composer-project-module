@@ -11,7 +11,7 @@
   ~ @see https://www.typist.tech/projects/codeception-composer-project-module
   -->
 
-<ruleset name="PSR 2">
+<ruleset name="PSR2-With-Codeception">
 
     <description>PSR 2</description>
 
@@ -22,6 +22,7 @@
     <rule ref="PSR2"/>
 
     <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
+        <exclude-pattern>/src/ComposerProject.php</exclude-pattern>
         <exclude-pattern>/tests/*</exclude-pattern>
     </rule>
 
