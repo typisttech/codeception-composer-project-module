@@ -23,7 +23,6 @@
 
     <rule ref="PSR2.Methods.MethodDeclaration.Underscore">
         <exclude-pattern>/src/ComposerProject.php</exclude-pattern>
-        <exclude-pattern>/tests/*</exclude-pattern>
     </rule>
 
 </ruleset>
