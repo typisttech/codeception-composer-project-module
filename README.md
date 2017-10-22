@@ -7,7 +7,6 @@
 [![PHP Versions Tested](http://php-eye.com/badge/typisttech/codeception-composer-project-module/tested.svg)](https://travis-ci.org/TypistTech/codeception-composer-project-module)
 [![StyleCI](https://styleci.io/repos/85661405/shield?branch=master)](https://styleci.io/repos/85661405)
 [![Dependency Status](https://gemnasium.com/badges/github.com/TypistTech/codeception-composer-project-module.svg)](https://gemnasium.com/github.com/TypistTech/codeception-composer-project-module)
-[![Latest Unstable Version](https://poser.pugx.org/typisttech/codeception-composer-project-module/v/unstable)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
 [![License](https://poser.pugx.org/typisttech/codeception-composer-project-module/license)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
 [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.typist.tech/donate/codeception-composer-project-module/)
 [![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://www.typist.tech/contact/)
@@ -55,7 +54,7 @@ Create throw away composer projects for Codeception tests.
 
 ## Why?
 
-Because it good to test your code in a more realistic environment. 
+Because it good to test your code in a more realistic environment.
 
 ## The Goals, or What This Module Does?
 
@@ -152,7 +151,7 @@ See: [Composer document](https://getcomposer.org/doc/05-repositories.md#path)
 
 *Optional* Array of strings
 
-Example: 
+Example:
 ```yaml
 - 'tests/_data/dummy'
 - 'tests/_data/another-dummy'
@@ -226,7 +225,7 @@ $tmpProjectDir = realpath($tmpProjectDir);
 
 ### I want to see what Codeception Composer Project Module have done for me?
 
-Run the tests with the [`--debug` flag](http://codeception.com/docs/reference/Commands). 
+Run the tests with the [`--debug` flag](http://codeception.com/docs/reference/Commands).
 
 Codeception Composer Project Module will log debug message to the console.
 
@@ -261,16 +260,16 @@ Yes. This module works on both [`codeception/codeception`](https://packagist.org
 
 Here you go: [Imposter Plugin](https://github.com/TypistTech/imposter-plugin)
 
-## Support! 
+## Support!
 
 ### Donate via PayPal [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.typist.tech/donate/codeception-composer-project-module/)
 
-Love Codeception Composer Project Module? Help me maintain Codeception Composer Project Module, a [donation here](https://www.typist.tech/donate/codeception-composer-project-module/) can help with it. 
+Love Codeception Composer Project Module? Help me maintain Codeception Composer Project Module, a [donation here](https://www.typist.tech/donate/codeception-composer-project-module/) can help with it.
 
 ### Why don't you hire me?
-Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email info@typist.tech 
+Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email info@typist.tech
 
-### Want to help in other way? Want to be a sponsor? 
+### Want to help in other way? Want to be a sponsor?
 Contact: [Tang Rufus](mailto:tangrufus@gmail.com)
 
 ## Developing
