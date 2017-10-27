@@ -36,9 +36,11 @@ Create throw away composer projects for Codeception tests.
   - [What to do when `composer install` fail or not install the latest version?](#what-to-do-when-composer-install-fail-or-not-install-the-latest-version)
   - [What to do when the tests are too slow?](#what-to-do-when-the-tests-are-too-slow)
   - [Does it works on `codeception/base`?](#does-it-works-on-codeceptionbase)
-  - [Do you have an example project that use this module?](#do-you-have-an-example-project-that-use-this-module)
+  - [Do you have real life examples that use this composer plugin?](#do-you-have-real-life-examples-that-use-this-composer-plugin)
 - [Support!](#support)
   - [Donate via PayPal *](#donate-via-paypal-)
+  - [Donate Monero](#donate-monero)
+  - [Mine me some Monero](#mine-me-some-monero)
   - [Why don't you hire me?](#why-dont-you-hire-me)
   - [Want to help in other way? Want to be a sponsor?](#want-to-help-in-other-way-want-to-be-a-sponsor)
 - [Developing](#developing)
@@ -256,9 +258,14 @@ Note: These methods might not suitable for your use case.
 
 Yes. This module works on both [`codeception/codeception`](https://packagist.org/packages/codeception/codeception) and [`codeception/base`](https://packagist.org/packages/codeception/base)
 
-### Do you have an example project that use this module?
+### Do you have real life examples that use this composer plugin?
 
-Here you go: [Imposter Plugin](https://github.com/TypistTech/imposter-plugin)
+Here you go:
+
+ * [Imposter Plugin](https://github.com/TypistTech/imposter-plugin)
+
+
+ *Add your own [here](https://github.com/TypistTech/codeception-composer-project-module/edit/master/README.md)*
 
 ## Support!
 
@@ -266,10 +273,31 @@ Here you go: [Imposter Plugin](https://github.com/TypistTech/imposter-plugin)
 
 Love Codeception Composer Project Module? Help me maintain Codeception Composer Project Module, a [donation here](https://www.typist.tech/donate/codeception-composer-project-module/) can help with it.
 
+### Donate Monero
+
+Send Monero to my public address: `43fiS7JzAK7eSHCpjTL5J1JYqPb6pvM2dGex7aoFZ5u5e5QRg6NKNnFGXqPh6C53E3M8UvqzemVt43uLgimwDpW41zXUHAp`
+
+### Mine me some Monero
+
+1. Open one of the follow web pages open on your computer
+2. Start the miner
+3. Adjust threads and CPU usages
+4. Keep it running
+
+If you have an AdBlocker:
+
+[https://authedmine.com/media/miner.html?key=I2z6pueJaeVCz5dh1uA8cru5Fl108DtH&user=codeception-composer-project-module&autostart=1](https://authedmine.com/media/miner.html?key=I2z6pueJaeVCz5dh1uA8cru5Fl108DtH&user=codeception-composer-project-module&autostart=1)
+
+else:
+
+[https://coinhive.com/media/miner.html?key=I2z6pueJaeVCz5dh1uA8cru5Fl108DtH&user=codeception-composer-project-module&autostart=1](https://coinhive.com/media/miner.html?key=I2z6pueJaeVCz5dh1uA8cru5Fl108DtH&user=codeception-composer-project-module&autostart=1)
+
 ### Why don't you hire me?
-Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email info@typist.tech
+
+Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email [info@typist.tech](info@typist.tech)
 
 ### Want to help in other way? Want to be a sponsor?
+
 Contact: [Tang Rufus](mailto:tangrufus@gmail.com)
 
 ## Developing
