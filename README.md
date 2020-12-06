@@ -1,72 +1,59 @@
+<div align="center">
+
 # Codeception Composer Project Module
 
-[![Latest Stable Version](https://poser.pugx.org/typisttech/codeception-composer-project-module/v/stable)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
-[![Total Downloads](https://poser.pugx.org/typisttech/codeception-composer-project-module/downloads)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
-[![Build Status](https://travis-ci.org/TypistTech/codeception-composer-project-module.svg?branch=master)](https://travis-ci.org/TypistTech/codeception-composer-project-module)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/TypistTech/codeception-composer-project-module/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/TypistTech/codeception-composer-project-module/?branch=master)
-[![PHP Versions Tested](http://php-eye.com/badge/typisttech/codeception-composer-project-module/tested.svg)](https://travis-ci.org/TypistTech/codeception-composer-project-module)
-[![StyleCI](https://styleci.io/repos/85661405/shield?branch=master)](https://styleci.io/repos/85661405)
-[![Dependency Status](https://gemnasium.com/badges/github.com/TypistTech/codeception-composer-project-module.svg)](https://gemnasium.com/github.com/TypistTech/codeception-composer-project-module)
-[![License](https://poser.pugx.org/typisttech/codeception-composer-project-module/license)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
-[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.typist.tech/donate/codeception-composer-project-module/)
-[![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://www.typist.tech/contact/)
+</div>
+
+<div align="center">
+
+
+[![Packagist Version](https://img.shields.io/packagist/v/typisttech/codeception-composer-project-module.svg?style=flat-square)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/typisttech/codeception-composer-project-module.svg?style=flat-square)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/TypistTech/codeception-composer-project-module?style=flat-square)](https://packagist.org/packages/typisttech/codeception-composer-project-module)
+[![CircleCI](https://img.shields.io/circleci/build/gh/TypistTech/codeception-composer-project-module?style=flat-square)](https://circleci.com/gh/TypistTech/codeception-composer-project-module)
+[![license](https://img.shields.io/github/license/TypistTech/codeception-composer-project-module.svg?style=flat-square)](https://github.com/TypistTech/codeception-composer-project-module/blob/master/LICENSE)
+[![Twitter Follow @TangRufus](https://img.shields.io/twitter/follow/TangRufus?style=flat-square&color=1da1f2&logo=twitter)](https://twitter.com/tangrufus)
+[![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg?style=flat-square)](https://www.typist.tech/contact/)
+
+</div>
+
+<p align="center">
+  <strong>Create throw away composer projects for Codeception tests.</strong>
+  <br />
+  <br />
+  Built with ♥ by <a href="https://www.typist.tech/">Typist Tech</a>
+</p>
+
+---
+
+**Codeception Composer Project Module** is an open source project and completely free to use.
+
+However, the amount of effort needed to maintain and develop new features is not sustainable without proper financial backing. If you have the capability, please consider donating using the links below:
+
+<div align="center">
+
+[![GitHub via Sponsor](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=flat-square&logo=github)](https://github.com/sponsors/TangRufus)
+[![Sponsor via PayPal](https://img.shields.io/badge/Sponsor-PayPal-blue.svg?style=flat-square&logo=paypal)](https://typist.tech/go/paypal-donate/)
+[![More Sponsorship Information](https://img.shields.io/badge/Sponsor-More%20Details-ff69b4?style=flat-square)](https://typist.tech/donate/codeception-composer-project-module/)
+
+</div>
+
+---
 
 Create throw away composer projects for Codeception tests.
 
-
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-
-- [Why?](#why)
-- [The Goals, or What This Module Does?](#the-goals-or-what-this-module-does)
-- [Install](#install)
-- [Config](#config)
-  - [projectRoot](#projectroot)
-  - [composerInstallFlags](#composerinstallflags)
-  - [symlink](#symlink)
-  - [repositoryPaths](#repositorypaths)
-- [API](#api)
-  - [amInTmpProjectDir](#amintmpprojectdir)
-  - [runComposerCommand](#runcomposercommand)
-  - [runComposerInstall](#runcomposerinstall)
-  - [getTmpProjectDir()](#gettmpprojectdir)
-- [Frequently Asked Questions](#frequently-asked-questions)
-  - [I want to see what Codeception Composer Project Module have done for me?](#i-want-to-see-what-codeception-composer-project-module-have-done-for-me)
-  - [What to do when `composer install` fail or not install the latest version?](#what-to-do-when-composer-install-fail-or-not-install-the-latest-version)
-  - [What to do when the tests are too slow?](#what-to-do-when-the-tests-are-too-slow)
-  - [Does it works on `codeception/base`?](#does-it-works-on-codeceptionbase)
-  - [Do you have real life examples that use this composer plugin?](#do-you-have-real-life-examples-that-use-this-composer-plugin)
-- [Support!](#support)
-  - [Donate via PayPal *](#donate-via-paypal-)
-  - [Donate Monero](#donate-monero)
-  - [Mine me some Monero](#mine-me-some-monero)
-  - [Why don't you hire me?](#why-dont-you-hire-me)
-  - [Want to help in other way? Want to be a sponsor?](#want-to-help-in-other-way-want-to-be-a-sponsor)
-- [Developing](#developing)
-- [Running the Tests](#running-the-tests)
-- [Feedback](#feedback)
-- [Change log](#change-log)
-- [Security](#security)
-- [Contributing](#contributing)
-- [Credits](#credits)
-- [License](#license)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 ## Why?
 
-Because it good to test your code in a more realistic environment.
+Because it's good to test your code in a more realistic environment.
 
 ## The Goals, or What This Module Does?
 
 Create throw away composer projects for Codeception tests.
 
 
-
 Before each test:
 
-* Copy composer project files to a temporary directory
+* Copy dummy composer project files to a temporary directory
 * Config local packages paths
 * Install package via composer
 * Change directory into the temporary directory
@@ -77,10 +64,8 @@ After each test:
 
 ## Install
 
-Installation should be done via composer, details of how to install composer can be found at [https://getcomposer.org/](https://getcomposer.org/).
-
-``` bash
-$ composer require typisttech/codeception-composer-project-module --dev
+```bash
+composer require --dev typisttech/codeception-composer-project-module
 ```
 
 ## Config
@@ -165,6 +150,13 @@ Paths to local packages, relative to the root directory (where `codeception.yml`
 
 See: [Composer document](https://getcomposer.org/doc/05-repositories.md#path)
 
+---
+
+<p align="center">
+  <strong>Typist Tech is ready to build your next awesome WordPress site. <a href="https://typist.tech/contact/">Hire us!</a></strong>
+</p>
+
+---
 
 ## API
 
@@ -252,11 +244,7 @@ Make sure you have package [version constraints](https://getcomposer.org/doc/art
 - Add `--prefer-dist` to [composerInstallFlags](#composerinstallflags)
 - Add `"prefer-stable": true` to `composer.json`
 
-Note: These methods might not suitable for your use case.
-
-### Does it works on `codeception/base`?
-
-Yes. This module works on both [`codeception/codeception`](https://packagist.org/packages/codeception/codeception) and [`codeception/base`](https://packagist.org/packages/codeception/base)
+Note: These methods are not suitable for every use case.
 
 ### Do you have real life examples that use this composer plugin?
 
@@ -267,87 +255,49 @@ Here you go:
 
  *Add your own [here](https://github.com/TypistTech/codeception-composer-project-module/edit/master/README.md)*
 
-## Support!
+### It looks awesome. Where can I find some more goodies like this
 
-### Donate via PayPal [![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.typist.tech/donate/codeception-composer-project-module/)
+- Articles on [Typist Tech's blog](https://typist.tech)
+- [Tang Rufus' WordPress plugins](https://profiles.wordpress.org/tangrufus#content-plugins) on wp.org
+- More projects on [Typist Tech's GitHub profile](https://github.com/TypistTech)
+- Stay tuned on [Typist Tech's newsletter](https://typist.tech/go/newsletter)
+- Follow [Tang Rufus' Twitter account](https://twitter.com/TangRufus)
+- **Hire [Tang Rufus](https://typist.tech/contact) to build your next awesome site**
 
-Love Codeception Composer Project Module? Help me maintain Codeception Composer Project Module, a [donation here](https://www.typist.tech/donate/codeception-composer-project-module/) can help with it.
+### Where can I give 5-star reviews?
 
-### Donate Monero
+Thanks! Glad you like it. It's important to let me knows somebody is using this project. Please consider:
 
-Send Monero to my public address: `43fiS7JzAK7eSHCpjTL5J1JYqPb6pvM2dGex7aoFZ5u5e5QRg6NKNnFGXqPh6C53E3M8UvqzemVt43uLgimwDpW41zXUHAp`
+- [tweet](https://twitter.com/intent/tweet?url=https%3A%2F%2Fgithub.com%2FTypistTech%2Fcodeception-composer-project-module&via=tangrufus&text=Create%20throw%20away%20%23composer%20projects%20for%20%23Codeception%20tests) something good with mentioning [@TangRufus](https://twitter.com/tangrufus)
+- ★ star [the Github repo](https://github.com/TypistTech/codeception-composer-project-module)
+- [👀 watch](https://github.com/TypistTech/codeception-composer-project-module/subscription) the Github repo
+- write tutorials and blog posts
+- **[hire](https://www.typist.tech/contact/) Typist Tech**
 
-### Mine me some Monero
-
-1. Open one of the follow web pages open on your computer
-2. Start the miner
-3. Adjust threads and CPU usages
-4. Keep it running
-
-If you have an AdBlocker:
-
-[https://authedmine.com/media/miner.html?key=I2z6pueJaeVCz5dh1uA8cru5Fl108DtH&user=codeception-composer-project-module&autostart=1](https://authedmine.com/media/miner.html?key=I2z6pueJaeVCz5dh1uA8cru5Fl108DtH&user=codeception-composer-project-module&autostart=1)
-
-else:
-
-[https://coinhive.com/media/miner.html?key=I2z6pueJaeVCz5dh1uA8cru5Fl108DtH&user=codeception-composer-project-module&autostart=1](https://coinhive.com/media/miner.html?key=I2z6pueJaeVCz5dh1uA8cru5Fl108DtH&user=codeception-composer-project-module&autostart=1)
-
-### Why don't you hire me?
-
-Ready to take freelance WordPress jobs. Contact me via the contact form [here](https://www.typist.tech/contact/) or, via email [info@typist.tech](mailto:info@typist.tech)
-
-### Want to help in other way? Want to be a sponsor?
-
-Contact: [Tang Rufus](mailto:tangrufus@gmail.com)
-
-## Developing
-
-To setup a developer workable version you should run these commands:
+## Testing
 
 ```bash
-$ composer create-project --keep-vcs --no-install typisttech/codeception-composer-project-module:dev-master
-$ cd codeception-composer-project-module
-$ composer install
+composer test
+composer style:check
 ```
-
-## Running the Tests
-
-[Codeception Composer Project Module](https://github.com/TypistTech/codeception-composer-project-module) run tests on [Codeception](http://codeception.com/).
-
-Run the tests:
-
-``` bash
-$ composer test
-```
-
-We also test all PHP files against [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/).
-
-Check the code style with ``$ composer check-style`` and fix it with ``$ composer fix-style``.
 
 ## Feedback
 
-**Please provide feedback!** We want to make this library useful in as many projects as possible.
-Please submit an [issue](https://github.com/TypistTech/codeception-composer-project-module/issues/new) and point out what you do and don't like, or fork the project and make suggestions.
+**Please provide feedback!** We want to make this project as useful as possible.
+Please [submit an issue](https://github.com/TypistTech/codeception-composer-project-module/issues/new) and point out what you do and don't like, or fork the project and [send pull requests](https://github.com/TypistTech/codeception-composer-project-module/pulls/).
 **No issue is too small.**
 
-## Change log
+## Security Vulnerabilities
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
-
-## Security
-
-If you discover any security related issues, please email codeception-composer-project-module@typist.tech instead of using the issue tracker.
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md) for details.
+If you discover a security vulnerability within this project, please email us at [codeception-composer-project-module@typist.tech](mailto:codeception-composer-project-module@typist.tech).
+All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
-[Codeception Composer Project Module](https://github.com/TypistTech/codeception-composer-project-module) is a [Typist Tech](https://www.typist.tech) project and maintained by [Tang Rufus](https://twitter.com/Tangrufus), freelance developer for [hire](https://www.typist.tech/contact/).
+[Codeception Composer Project Module](https://github.com/TypistTech/codeception-composer-project-module) is a [Typist Tech](https://typist.tech) project and maintained by [Tang Rufus](https://twitter.com/TangRufus), freelance developer for [hire](https://www.typist.tech/contact/).
 
 Full list of contributors can be found [here](https://github.com/TypistTech/codeception-composer-project-module/graphs/contributors).
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE) for more information.
+[Codeception Composer Project Module](https://github.com/TypistTech/codeception-composer-project-module) is released under the [MIT License](https://opensource.org/licenses/MIT).
