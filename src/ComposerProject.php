@@ -1,17 +1,5 @@
 <?php
 
-/**
- * Codeception Composer Project Module
- *
- * Create throw away composer projects for Codeception tests.
- *
- * @package   TypistTech\CodeceptionComposerProjectModule
- * @author    Typist Tech <codeception-composer-project-module@typist.tech>
- * @copyright 2017 Typist Tech
- * @license   MIT
- * @see       https://www.typist.tech/projects/codeception-composer-project-module
- */
-
 declare(strict_types=1);
 
 namespace Codeception\Module;
