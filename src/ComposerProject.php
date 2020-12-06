@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Codeception Composer Project Module
  *
@@ -23,7 +24,7 @@ use Spatie\TemporaryDirectory\TemporaryDirectory;
 
 class ComposerProject extends Module implements DependsOnModule, RequiresPackage
 {
-    const DEPENDENCY_MESSAGE = <<<EOF
+    protected const DEPENDENCY_MESSAGE = <<<EOF
 Example configuring ComposerProject.
 --
 modules:
@@ -48,8 +49,8 @@ EOF;
 
     protected $config = [
         'composerInstallFlags' => '--no-interaction --quiet',
-        'symlink'              => 'true',
-        'repositoryPaths'      => [],
+        'symlink' => 'true',
+        'repositoryPaths' => [],
     ];
 
     /**
@@ -101,7 +102,7 @@ EOF;
     {
         $this->debugSection('ComposerProject', 'Creating temporary directory...');
 
-        $this->tmpProjectDir = (new TemporaryDirectory)->create()->path();
+        $this->tmpProjectDir = (new TemporaryDirectory())->create()->path();
 
         $this->debugSection('ComposerProject', "Created temporary directory at $this->tmpProjectDir");
     }
@@ -174,7 +175,7 @@ EOF;
     public function _depends(): array
     {
         return [
-            Cli::class        => static::DEPENDENCY_MESSAGE,
+            Cli::class => static::DEPENDENCY_MESSAGE,
             Filesystem::class => static::DEPENDENCY_MESSAGE,
         ];
     }
@@ -187,14 +188,14 @@ EOF;
      */
     public function _inject(Cli $cli, Filesystem $filesystem)
     {
-        $this->cli        = $cli;
+        $this->cli = $cli;
         $this->filesystem = $filesystem;
     }
 
     public function _requires(): array
     {
         return [
-            TemporaryDirectory::class => '"spatie/temporary-directory": "^1.1"',
+            TemporaryDirectory::class => '"spatie/temporary-directory": "^1.3"',
         ];
     }
 
