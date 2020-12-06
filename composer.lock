@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa2ebbd77ed6d8f3c69379800ecc42bf",
+    "content-hash": "e449bea39614e04d00e38d5b34afb5af",
     "packages": [
         {
             "name": "spatie/temporary-directory",
