@@ -44,7 +44,7 @@ Create throw away composer projects for Codeception tests.
 
 ## Why?
 
-Because it's good to test your code in a more realistic environment.
+Because it's good to test your composer plugins in a more realistic environment.
 
 ## The Goals, or What This Module Does?
 
@@ -182,9 +182,8 @@ Run a composer command
 
 Example:
 ```php
-$I->runComposerCommand('update --verbose');
-
 // This is equivalent to running `$ composer update --verbose` in the console.
+$I->runComposerCommand('update --verbose');
 ```
 
 ### runComposerInstall
@@ -216,6 +215,10 @@ $tmpProjectDir = realpath($tmpProjectDir);
 ```
 
 ## Frequently Asked Questions
+
+### Which composer versions are supported?
+
+Both v1 and v2.
 
 ### I want to see what Codeception Composer Project Module have done for me?
 
@@ -254,6 +257,12 @@ Here you go:
 
 
  *Add your own [here](https://github.com/TypistTech/codeception-composer-project-module/edit/master/README.md)*
+
+### Will you add support for older PHP versions?
+
+Never! This plugin will only work on [actively supported PHP versions](https://secure.php.net/supported-versions.php).
+
+Don't use it on **end of life** or **security fixes only** PHP versions.
 
 ### It looks awesome. Where can I find some more goodies like this
 
