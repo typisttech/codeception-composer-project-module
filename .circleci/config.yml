@@ -1,0 +1,51 @@
+version: 2.1
+
+orbs:
+  php: circleci/php@1
+
+jobs:
+  test-composer-v1:
+    executor:
+      name: php/default
+      tag: << parameters.version >>
+    parameters:
+      version:
+        type: string
+    environment:
+      EXPECT_COMPOSER_V1: true
+    steps:
+      - checkout
+      - php/install-composer:
+          install-version: 1.10.19
+      - run: php -v
+      - run: composer --version
+      - restore_cache:
+          keys:
+            - composer-deps-v1-{{ checksum "/home/circleci/project/composer.lock" }}
+      - run: composer update --no-interaction --prefer-dist
+      - save_cache:
+          key: composer-deps-v1-{{ checksum "/home/circleci/project/composer.lock" }}
+          paths:
+            - /home/circleci/project/composer.lock
+            - /home/circleci/.composer/cache/files
+      - run: composer test
+
+workflows:
+  test:
+    jobs:
+      - test-composer-v1:
+          name: test-composer-v1-php-<< matrix.version >>
+          matrix:
+            parameters:
+              version: ["8.0", "7.4", "7.3"]
+      - php/test:
+          name: test-php-<< matrix.version >>
+          matrix:
+            parameters:
+              version: ["8.0", "7.4", "7.3"]
+      - php/test:
+          name: style-check-php-<< matrix.version >>
+          test-command: style:check
+          matrix:
+            parameters:
+              version: ["8.0", "7.3"]

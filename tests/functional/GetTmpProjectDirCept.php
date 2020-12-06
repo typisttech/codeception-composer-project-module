@@ -1,4 +1,6 @@
-<?php use TypistTech\CodeceptionComposerProjectModule\FunctionalTester;
+<?php
+
+use TypistTech\CodeceptionComposerProjectModule\FunctionalTester;
 
 $I = new FunctionalTester($scenario);
 
