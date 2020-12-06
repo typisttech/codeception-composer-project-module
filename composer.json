@@ -38,6 +38,11 @@
     "config": {
         "sort-packages": true
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
     "autoload": {
         "psr-4": {
             "Codeception\\Module\\": "src/"
